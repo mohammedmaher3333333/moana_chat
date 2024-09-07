@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:moana_chat/constants.dart';
-import 'package:moana_chat/screens/register_screen.dart';
 import 'package:moana_chat/widgets/custom_button.dart';
 import 'package:moana_chat/widgets/custom_text_field.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
+  static String id='RegisterScreen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +26,7 @@ class LoginScreen extends StatelessWidget {
             const Row(
               children: [
                 Text(
-                  'LOGIN',
+                  'Register',
                   style: TextStyle(
                     fontSize: 24,
                     color: Colors.white,
@@ -51,23 +50,23 @@ class LoginScreen extends StatelessWidget {
               height: 8.0,
             ),
             CustomButton(
-              textButton: 'LOGIN',
+              textButton: 'Register',
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "don't have an account?",
+                  "already have an account?",
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, RegisterScreen.id);
+                    Navigator.pop(context);
                   },
                   child: const Text(
-                    'Register',
+                    'Login',
                     style: TextStyle(
                       color: Colors.blue,
                     ),
