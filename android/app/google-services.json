@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165402352856",
+    "project_id": "moana-chat",
+    "storage_bucket": "moana-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165402352856:android:d204a293408a774e49cbad",
+        "android_client_info": {
+          "package_name": "com.example.moana_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY45g3orp-YZlvcd967j4MKy5iy61ykP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
