@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-   const CustomButton({super.key,required this.textButton});
+  CustomButton({super.key, required this.textButton, this.onTap});
+
   final String textButton;
+  VoidCallback? onTap;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         height: 50,

@@ -21,8 +21,8 @@ class MoanaChat extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        'LoginScreen': (context) => const LoginScreen(),
-        RegisterScreen.id: (context) => const RegisterScreen(),
+        'LoginScreen': (context) => LoginScreen(),
+        RegisterScreen.id: (context) => RegisterScreen(),
       },
       initialRoute: 'LoginScreen',
     );
