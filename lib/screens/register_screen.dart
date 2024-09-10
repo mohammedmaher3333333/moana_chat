@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:moana_chat/constants.dart';
+import 'package:moana_chat/helper/show_snack_bar.dart';
+import 'package:moana_chat/screens/chat_screen.dart';
 import 'package:moana_chat/widgets/custom_button.dart';
-import 'package:moana_chat/widgets/custom_text_field.dart';
+import 'package:moana_chat/widgets/custom_text_form_field.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -58,7 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 16.0,
                 ),
-                CustomTextField(
+                CustomTextFormField(
                   onChanged: (data) {
                     email = data;
                   },
@@ -67,7 +69,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 8.0,
                 ),
-                CustomTextField(
+                CustomTextFormField(
+                  obscureText: true,
                   onChanged: (data) {
                     password = data;
                   },
@@ -83,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       setState(() {});
                       try {
                         await registerUser();
-                        showSnackBar(context, 'Success');
+                        Navigator.pushNamed(context, ChatScreen.id);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
                           showSnackBar(
@@ -127,14 +130,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  void showSnackBar(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moana_chat/screens/chat_screen.dart';
 import 'package:moana_chat/screens/login_screen.dart';
 import 'package:moana_chat/screens/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,8 +22,9 @@ class MoanaChat extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        'LoginScreen': (context) => LoginScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
+        ChatScreen.id: (context) => ChatScreen(),
       },
       initialRoute: 'LoginScreen',
     );
